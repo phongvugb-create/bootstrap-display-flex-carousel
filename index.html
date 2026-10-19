@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Practice</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .grid-column {
+            min-height: 150px;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .contact-card {
+            max-width: 750px;
+            margin: auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 767.98px) {
+            .carousel-img {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-home me-2"></i>MyWebsite
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Mở menu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#grid">Grid System</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carousel">Hình ảnh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bước 1: Grid với 3 cột -->
+    <section id="home" class="container mt-5">
+        <h1 class="text-center mb-4">
+            <i class="fas fa-layer-group text-primary"></i>
+            Thực hành Bootstrap
+        </h1>
+
+        <div class="row g-3" id="grid">
+            <div class="col-12 col-md-4">
+                <div class="grid-column d-flex justify-content-center align-items-center bg-light p-3 rounded">
+                    <p class="mb-0 fs-5">Phần 1</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="grid-column d-flex justify-content-center align-items-center bg-secondary p-3 text-white rounded">
+                    <p class="mb-0 fs-5">Phần 2</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="grid-column d-flex justify-content-center align-items-center bg-light p-3 rounded">
+                    <p class="mb-0 fs-5">Phần 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bước 2: Margin và Padding -->
+    <section class="container my-5 py-3">
+        <h3 class="text-center mb-3">
+            <i class="fas fa-arrows-up-down-left-right text-primary"></i>
+            Khoảng cách với Margin & Padding
+        </h3>
+
+        <p class="text-center text-muted mb-0">
+            Margin tạo khoảng cách bên ngoài phần tử, còn Padding tạo
+            khoảng cách giữa nội dung và đường viền phần tử.
+        </p>
+    </section>
+
+    <!-- Bước 3: Display Property -->
+    <section class="container mb-5">
+        <div class="d-none d-md-block bg-warning text-center p-4 rounded">
+            <h4>
+                <i class="fas fa-desktop me-2"></i>
+                Nội dung dành cho màn hình lớn
+            </h4>
+            <p class="mb-0">
+                Nội dung này chỉ hiển thị khi màn hình rộng từ 768px trở lên.
+            </p>
+        </div>
+
+        <div class="d-block d-md-none bg-info-subtle text-center p-4 rounded">
+            <p class="mb-0">
+                <i class="fas fa-mobile-alt me-2"></i>
+                Bạn đang xem trên màn hình nhỏ.
+            </p>
+        </div>
+    </section>
+
+    <!-- Bước 4: Carousel -->
+    <section id="carousel" class="container mb-5">
+        <h2 class="text-center mb-4">Thư viện hình ảnh</h2>
+
+        <div
+            id="myCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+        >
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#myCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Hình 1"
+                ></button>
+
+                <button
+                    type="button"
+                    data-bs-target="#myCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Hình 2"
+                ></button>
+
+                <button
+                    type="button"
+                    data-bs-target="#myCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Hình 3"
+                ></button>
+            </div>
+
+            <div class="carousel-inner rounded">
+                <div class="carousel-item active">
+                    <img
+                        src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
+                        class="d-block w-100 carousel-img"
+                        alt="Không gian làm việc hiện đại"
+                    >
+                    <div class="carousel-caption">
+                        <h5>Không gian sáng tạo</h5>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img
+                        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80"
+                        class="d-block w-100 carousel-img"
+                        alt="Văn phòng chuyên nghiệp"
+                    >
+                    <div class="carousel-caption">
+                        <h5>Môi trường làm việc chuyên nghiệp</h5>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img
+                        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80"
+                        class="d-block w-100 carousel-img"
+                        alt="Nhóm làm việc cùng nhau"
+                    >
+                    <div class="carousel-caption">
+                        <h5>Cùng nhau phát triển</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nút chuyển ảnh trước -->
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide="prev"
+                aria-label="Ảnh trước"
+            >
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <!-- Nút chuyển ảnh tiếp theo -->
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide="next"
+                aria-label="Ảnh tiếp theo"
+            >
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Bước 5: Font Awesome -->
+    <section class="container text-center mb-5">
+        <h3 class="mb-3">
+            <i class="fas fa-home text-primary"></i>
+            Trang chủ
+        </h3>
+
+        <p class="text-muted">
+            Font Awesome cung cấp các biểu tượng giúp giao diện trực quan hơn.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane me-2"></i>
+            Liên hệ với chúng tôi
+        </a>
+    </section>
+
+    <!-- Bước 6: Contact Form -->
+    <section id="contact" class="container my-5">
+        <div class="contact-card">
+            <h2 class="text-center mb-2">Form liên hệ</h2>
+            <p class="text-center text-muted mb-4">
+                Vui lòng điền thông tin bên dưới.
+            </p>
+
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Họ và tên</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder="Nhập họ và tên"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Nhập email"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Nội dung</label>
+                    <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Nhập nội dung"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane me-2"></i>
+                    Gửi
+                </button>
+
+                <div id="formResult" class="mt-3" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-2">
+                &copy; 2026 MyWebsite. Tất cả quyền được bảo lưu.
+            </p>
+            <a href="#home" class="text-white me-3">Trang chủ</a>
+            <a href="#contact" class="text-white">Liên hệ</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Xử lý form demo -->
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const formResult = document.getElementById("formResult");
+
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            formResult.innerHTML =
+                '<div class="alert alert-success" role="alert">' +
+                'Cảm ơn bạn! Form đã được kiểm tra thành công. ' +
+                'Đây là bản demo, thông tin chưa được gửi đến máy chủ.' +
+                '</div>';
+
+            contactForm.reset();
+        });
+    </script>
+
+</body>
+</html>
